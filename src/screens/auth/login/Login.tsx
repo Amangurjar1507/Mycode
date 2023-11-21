@@ -16,8 +16,6 @@ const Login: React.FC = () => {
   const {
     signupButton,
     onTermsAndCondition,
-    validateLogin,
-    error,
     refreshing,
     setPhoneNumber,
     phoneNumber,

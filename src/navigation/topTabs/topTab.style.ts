@@ -1,19 +1,20 @@
 import {StyleSheet} from 'react-native';
-import {color, font} from '../../theme';
+import color from '../../theme/color';
+import font from '../../theme/font';
 
 const style = StyleSheet.create({
   tabText: {
     fontSize: 8,
-    fontFamily: font.interRegular,
+    // fontFamily: font.interRegular,
     marginTop: 5,
   },
   container: {
     height: 70,
-    backgroundColor: color.white,
+    backgroundColor: color.textWhite,
   },
   mainView: {
     height: 70,
-    backgroundColor: color.white,
+    backgroundColor: color.textWhite,
     flexDirection: 'row',
     marginHorizontal: 15,
   },

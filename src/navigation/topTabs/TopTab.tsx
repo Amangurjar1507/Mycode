@@ -1,27 +1,21 @@
 import React, {memo} from 'react';
 import {StyleSheet} from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-  
+import screenName from '../screenName';
+import CustomMyTopTab from './TopTabNav';
+import Login from '../../screens/auth/login/Login';
+
 const Top = createMaterialTopTabNavigator();
 
 const AvailabilityTopTab = props => {
   return (
     <Top.Navigator tabBar={props => <CustomMyTopTab {...props} />}>
       <Top.Screen
-        // name={screenName.availabilitby}
-        // component={screenName.lo}
+        name={screenName.login}
+        component={Login}
         // options={{
         //   tabBarLabel: ({focused}) => (
         //     <TopTabCard focused={focused} lableName={'My Availability'} />
-        //   ),
-        // }}
-      />
-      <Top.Screen
-        // name={utils.screenName.mySkils}
-        // component={utils.navigationImport.mySkils}
-        // // options={{
-        //   tabBarLabel: ({focused}) => (
-        //     <TopTabCard focused={focused} lableName={'My Skill'} />
         //   ),
         // }}
       />
@@ -33,6 +27,6 @@ export default memo(AvailabilityTopTab);
 const styles = StyleSheet.create({
   tabBar: {
     width: '100%',
-    backgroundColor: uiConfig.colors.primary,
+    backgroundColor: 'green',
   },
 });

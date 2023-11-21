@@ -1,7 +1,8 @@
 export default {
   deviceName: 'DeviceName',
   version: 'Version',
-  model: 'Model',
+  password: 'password',
   platform: 'Platform',
   fCMToken: 'FCMToken',
+  mobileNumber: 'mobileNumber',
 };

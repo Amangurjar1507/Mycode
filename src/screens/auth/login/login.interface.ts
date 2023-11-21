@@ -3,13 +3,14 @@ export interface LoginHookProps {
   setPhoneNumber: React.Dispatch<React.SetStateAction<string>>;
   signupButton: () => void;
   onTermsAndCondition: () => void;
-  validateLogin: () => void;
-  error: LoginError;
-  setError: React.Dispatch<React.SetStateAction<LoginError>>;
+  validationLogin: () => void;
+  errorObject: LoginError | any;
+  setErrorObject: React.Dispatch<React.SetStateAction<LoginError>>;
   refreshing: boolean | undefined;
 }
 export interface LoginError {
-  phoneNumberError: string;
+  emailError: string;
+  passwordError: string;
 }
 export interface CustomError {
   response?: {

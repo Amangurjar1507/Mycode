@@ -3,8 +3,8 @@ import {
   createStackNavigator,
   StackNavigationProp,
 } from '@react-navigation/stack';
-import Login from '../../screens/auth/login/login';
 import screenName from '../screenName';
+import Login from '../../screens/auth/login/Login';
 export type AuthParams = {
   Login: undefined;
 };
