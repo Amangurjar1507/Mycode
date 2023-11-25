@@ -1,8 +1,8 @@
 import React, {memo} from 'react';
 import {View, StatusBar} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {color} from '../../../theme';
 import {propType} from './customStatusbar.interface';
+import color from '../../../theme/color';
 
 const CustomStatusBar: React.FC<propType> = props => {
   const insets = useSafeAreaInsets();
