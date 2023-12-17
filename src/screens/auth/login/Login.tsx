@@ -1,7 +1,5 @@
 import React from 'react';
 import {
-  Image,
-  ImageBackground,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
@@ -13,13 +11,7 @@ import loginController from './login.controller';
 import style from './login.style';
 
 const Login: React.FC = () => {
-  const {
-    signupButton,
-    onTermsAndCondition,
-    refreshing,
-    setPhoneNumber,
-    phoneNumber,
-  } = loginController();
+  const {signupButton} = loginController();
   return (
     <View style={style.container}>
       <KeyboardAvoidingView
@@ -42,7 +34,7 @@ const Login: React.FC = () => {
             By Signing Up you agree to the following
             <Text
               style={style.termsText}
-              onPress={onTermsAndCondition}
+              // onPress={onTermsAndCondition}
               suppressHighlighting={true}>
               Terms & Conditions.
             </Text>

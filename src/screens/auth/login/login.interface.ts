@@ -1,16 +1,16 @@
 export interface LoginHookProps {
-  phoneNumber: string;
-  setPhoneNumber: React.Dispatch<React.SetStateAction<string>>;
   signupButton: () => void;
-  onTermsAndCondition: () => void;
   validationLogin: () => void;
-  errorObject: LoginError | any;
+  errorObject: LoginError;
   setErrorObject: React.Dispatch<React.SetStateAction<LoginError>>;
   refreshing: boolean | undefined;
+  setEmail: React.Dispatch<React.SetStateAction<string>>;
+  email: string;
+  setPassword: React.Dispatch<React.SetStateAction<string>>;
+  password: string;
 }
 export interface LoginError {
   emailError: string;
-  passwordError: string;
 }
 export interface CustomError {
   response?: {

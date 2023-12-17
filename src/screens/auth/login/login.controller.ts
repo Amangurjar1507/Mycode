@@ -11,6 +11,8 @@ import validationMessage from '../../../utility/validation/validationMessage';
 import params from '../../../services/config/params';
 import axiosInstance from '../../../services/api';
 import constant from '../../../services/config/constant';
+// import examples from 'libphonenumber-js/mobile/examples';
+// import {getExampleNumber} from 'libphonenumber-js';
 
 const loginController = (): LoginHookProps => {
   const navigation = useNavigation<AuthNavigationProps>();
@@ -19,6 +21,17 @@ const loginController = (): LoginHookProps => {
   const [errorObject, setErrorObject] = useState<LoginError>({
     emailError: undefined,
   });
+  // const onSelectCountry = (item: any) => {
+  //   const phoneNumberLength = getExampleNumber(item?.code, examples);
+  //   setTimeout(() => {
+  //     setMobileNumberLength(phoneNumberLength?.nationalNumber?.length);
+  //     setSelectCountryName(item?.name);
+  //     setSelectFlag(item?.flag);
+  //     setSelectCountryCode(item?.dial_code);
+  //     setCountryModal(false);
+  //     setMobileNumber('');
+  //   }, 0);
+  // };
 
   const isNumeric = (num: number | string): boolean =>
     (typeof num === 'number' ||
