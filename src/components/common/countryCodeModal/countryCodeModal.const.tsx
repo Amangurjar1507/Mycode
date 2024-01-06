@@ -1,4 +1,4 @@
-export const countryData = [
+export const allCountryData = [
   {name: 'Afghanistan', flag: '🇦🇫', code: 'AF', dial_code: '+93'},
   {name: 'Åland Islands', flag: '🇦🇽', code: 'AX', dial_code: '+358'},
   {name: 'Albania', flag: '🇦🇱', code: 'AL', dial_code: '+355'},

@@ -8,16 +8,16 @@ import {
   FlatList,
 } from 'react-native';
 import imageIndex from '../../../assets/imageIndex';
-import {CountryCodeModalProp, FlatlistProp} from './countryCodeModal.interface';
+import {CountryCodeModalProp, FlatListProp} from './countryCodeModal.interface';
 import styles from './countryCodeModal.style';
 import InputComponent from '../inputComponent/InputComponent';
 import categoryController from './countryCodeModal.Controlle';
 import color from '../../../theme/color';
 
 const CountryCodeModal: FC<CountryCodeModalProp> = props => {
-  const {Search, countryDatas, setCountryDatas, setSearch, handleSearch} =
+  const {Search, countryData, setCountryData, setSearch, handleSearch} =
     categoryController();
-  const renderItem: FC<FlatlistProp> = ({item, index}) => {
+  const renderItem: FC<FlatListProp> = ({item, index}) => {
     return (
       <View style={styles.mainViewList}>
         <TouchableOpacity
@@ -37,7 +37,11 @@ const CountryCodeModal: FC<CountryCodeModalProp> = props => {
     <View style={[styles.mainContainer, props.mainContainer]}>
       <TouchableOpacity
         style={[styles.mainViewRow, props.mainViewRow]}
-        onPress={props?.openModal}
+        onPress={() => {
+          props.openModal?.();
+          // @ts-ignore
+          setCountryData(allCountryData);
+        }}
         activeOpacity={0.7}>
         <Text style={[styles.valueTextStyle, props.valueTextStyle]}>
           {props?.value}

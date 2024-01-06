@@ -7,7 +7,6 @@ export interface CountryCodeModalProp {
   closeModal?: () => void;
   openModal?: () => void;
   data?: any;
-  openModaopenModal?: () => void;
   itemSelection?: (item?: ItemDataProps) => void;
   mainContainer?: StyleProp<ViewStyle> | undefined;
   textStyle?: StyleProp<TextStyle> | undefined;
@@ -15,9 +14,11 @@ export interface CountryCodeModalProp {
   valueTextStyle?: StyleProp<TextStyle> | undefined;
   mainViewModal?: StyleProp<ViewStyle> | undefined;
   closeImageStyle?: StyleProp<ImageStyle> | undefined;
+  onRequestClose?: () => void;
+  labelStyle?: StyleProp<ViewStyle> | undefined;
 }
 
-export interface FlatlistProp {
+export interface FlatListProp {
   item?: ItemDataProps;
   index?: number;
 }
@@ -25,9 +26,8 @@ export interface FlatlistProp {
 export interface CategoryProps {
   modal: boolean;
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
-
-  countryDatas?: ItemDataProps[] | any;
-  setCountryDatas?: React.Dispatch<React.SetStateAction<ItemDataProps[] | any>>;
+  countryData?: ItemDataProps[] | any;
+  setCountryData?: React.Dispatch<React.SetStateAction<ItemDataProps[] | any>>;
   Search: string;
   setSearch: React.Dispatch<React.SetStateAction<string>>;
   handleSearch: (text: string) => void;
