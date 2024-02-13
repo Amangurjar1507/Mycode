@@ -4,4 +4,5 @@ const color = {
   buttonColor: '#EF4E86',
   textWhite: '#ffffff',
 };
+
 export default color;
