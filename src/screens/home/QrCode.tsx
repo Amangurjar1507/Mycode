@@ -6,6 +6,7 @@ import {useTheme} from '@react-navigation/native';
 import imageIndex from '../../assets/imageIndex';
 import color from '../../theme/color';
 // import Clipboard from '@react-native-clipboard/clipboard';
+// import QRCodeScanner from 'react-native-qrcode-scanner';
 
 const QrCode = () => {
   const {dark, colors} = useTheme();
@@ -37,6 +38,15 @@ const QrCode = () => {
           backgroundColor={color.textWhite}
           logoBackgroundColor={color.black}
         /> */}
+           {/* <QRCodeScanner
+                      onRead={handleScan}
+                      reactivate={true}
+                      reactivateTimeout={3000}
+                      showMarker={true}
+                      markerStyle={{ borderColor: color.white, borderRadius: 10 }}
+                      markerSize={300}
+                      vibrate={true}
+                    /> */}
       </ScrollView>
     </View>
   );
