@@ -6,9 +6,10 @@ import {useTheme} from '@react-navigation/native';
 import imageIndex from '../../assets/imageIndex';
 import color from '../../theme/color';
 // import Clipboard from '@react-native-clipboard/clipboard';
-// import QRCodeScanner from 'react-native-qrcode-scanner';
+// import  from 'react-native-qrcode-scanner';
 
 const QrCode = () => {
+  
   const {dark, colors} = useTheme();
   const qrData: any = JSON.stringify({
     mobile: '455454',
