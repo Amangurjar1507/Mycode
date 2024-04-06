@@ -1,3 +1,9 @@
+
+// https://medium.com/walletconnect/how-to-build-a-react-native-dapp-with-walletconnect-28f08f332ed7
+
+
+// IN this Uisng the THE lolls Ethier
+
 // import {useNavigation} from '@react-navigation/native';
 // import {useWalletConnectModal} from '@walletconnect/modal-react-native';
 // import '@walletconnect/react-native-compat';
@@ -104,3 +110,57 @@
 // };
 
 // export default connectWalletController;
+// import React, { useEffect } from 'react';
+// import { View, Text, TouchableOpacity } from 'react-native';
+// import { Core } from '@walletconnect/core';
+// import { Web3Wallet } from '@walletconnect/web3wallet';
+
+// const WalletConnectComponent = () => {
+//   const core = new Core({
+//     // Replace 'YOUR_PROJECT_ID' with your WalletConnect project ID
+//     projectId: 'YOUR_PROJECT_ID'
+//   });
+
+//   useEffect(() => {
+//     createWeb3Wallet();
+//   }, []);
+
+//   const createWeb3Wallet = async () => {
+//     const web3wallet = await Web3Wallet.init({
+//       core,
+//       metadata: {
+//         name: 'Demo React Native Wallet',
+//         description: 'Demo RN Wallet to interface with Dapps',
+//         url: 'www.walletconnect.com',
+//         icons: []
+//       }
+//     });
+
+//     // Open the WalletConnect modal for user interaction
+//     web3wallet.createSession();
+//   };
+
+//   const connectToDApp = async () => {
+//     try {
+//       const uri = 'YOUR_DAPP_WALLETCONNECT_URI';
+//       await pair({ uri });
+//     } catch (error) {
+//       console.error('Error pairing with DApp:', error);
+//     }
+//   };
+
+//   const pair = async (params: { uri: string }) => {
+//     return await core.pairing.pair({ uri: params.uri });
+//   };
+
+//   return (
+//     <View>
+//       <TouchableOpacity onPress={connectToDApp}>
+//         <Text>Connect to DApp</Text>
+//       </TouchableOpacity>
+//     </View>
+//   );
+// };
+
+// export default WalletConnectComponent;
+
