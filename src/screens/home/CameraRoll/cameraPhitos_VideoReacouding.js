@@ -614,3 +614,112 @@
 
 // export default StreaksVideo;
 
+
+
+
+
+// import React, { useState, useRef } from 'react';
+// import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
+// import { RNCamera } from 'react-native-camera';
+// import Video from 'react-native-video';
+
+// const CameraComponent = () => {
+//   const [isRecording, setIsRecording] = useState(false);
+//   const [capturedImage, setCapturedImage] = useState(null);
+//   const [recordedVideo, setRecordedVideo] = useState(null);
+//   const [recordingDuration, setRecordingDuration] = useState(0);
+//   const [showProgressCircle, setShowProgressCircle] = useState(false);
+//   const cameraRef = useRef(null);
+//   let timer;
+
+//   const takePicture = async () => {
+//     if (cameraRef.current && !isRecording) {
+//       const options = { quality: 0.5, base64: true };
+//       const data = await cameraRef.current.takePictureAsync(options);
+//       setCapturedImage(data.uri);
+//     } else if (!isRecording) {
+//       startRecording();
+//     }
+//   };
+
+//   const startRecording = async () => {
+//     if (cameraRef.current) {
+//       const options = { quality: RNCamera.Constants.VideoQuality['480p'] };
+//       const data = await cameraRef.current.recordAsync(options);
+//       setRecordedVideo(data.uri);
+//     }
+//     setIsRecording(true);
+//     setShowProgressCircle(true); // Show progress circle when recording starts
+//     timer = setInterval(() => {
+//       setRecordingDuration(prevDuration => prevDuration + 1);
+//     }, 1000); // Update recording duration every second
+//   };
+
+//   const stopRecording = async () => {
+//     clearInterval(timer);
+//     if (cameraRef.current) {
+//       const data = await cameraRef.current.stopRecording();
+//       setRecordedVideo(data.uri);
+//     }
+//     setIsRecording(false);
+//     setRecordingDuration(0);
+//     setShowProgressCircle(false); // Hide progress circle when recording stops
+//   };
+
+//   return (
+//     <View style={{ flex: 1 }}>
+//       <View style={{ flex: 1 }}>
+//         {capturedImage && <Image source={{ uri: capturedImage }} style={{ flex: 1 }} />}
+//         {recordedVideo && (
+//           <Video
+//             source={{ uri: recordedVideo }}
+//             style={{ width: 500, height: 500 }}
+//             resizeMode="contain"
+//             controls={true}
+//             paused={false}
+//           />
+//         )}
+//         {!capturedImage && !recordedVideo && (
+//           <RNCamera
+//             ref={cameraRef}
+//             style={{ flex: 1 }}
+//             type={RNCamera.Constants.Type.back}
+//             flashMode={RNCamera.Constants.FlashMode.off}
+//             autoFocus={RNCamera.Constants.AutoFocus.on}
+//           />
+//         )}
+//         {showProgressCircle && (
+//           <View style={[styles.progressCircle, { transform: [{ rotate: `${recordingDuration * 6}deg` }] }]}>
+//             <Text style={styles.durationText}>{recordingDuration}</Text>
+//           </View>
+//         )}
+//       </View>
+//       <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>
+//         <TouchableOpacity onPress={takePicture} onLongPress={startRecording} onPressOut={stopRecording} style={{ padding: 20 }}>
+//           <View style={{ width: 45, height: 45, borderRadius: 45, borderWidth: 2 }} />
+//         </TouchableOpacity>
+//       </View>
+//     </View>
+//   );
+// };
+
+// const styles = StyleSheet.create({
+//   progressCircle: {
+//     position: 'absolute',
+//     width: 100,
+//     height: 100,
+//     borderRadius: 50,
+//     borderWidth: 2,
+//     borderColor: 'red',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     top: 20,
+//     right: 20,
+//   },
+//   durationText: {
+//     color: 'red',
+//     fontSize: 18,
+//   },
+// });
+
+// export default CameraComponent;
