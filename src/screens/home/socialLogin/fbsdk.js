@@ -89,3 +89,42 @@ export default class App extends Component {
 
 
  */}
+
+
+ import {AccessToken, LoginManager} from 'react-native-fbsdk-next';
+ const facebookLogin = () => {
+  /* facebook Login **/
+  LoginManager.logInWithPermissions(['public_profile', 'email'])
+    .then((result: any) => {
+      if (result.isCancelled) {
+        Log({logLable: 'Facebook login cancel', logValue: ''});
+      } else {
+        Log({
+          logLable: 'Login success with permissions:',
+          logValue: result.grantedPermissions.toString(),
+        });
+        return AccessToken.getCurrentAccessToken();
+      }
+    })
+    .then((data: any) => {
+      // const credential = firebase.auth.FacebookAuthProvider.credential(data.accessToken);
+      fetch(
+        'https://graph.facebook.com/v2.5/me?fields=email,name,picture&access_token=' +
+          data.accessToken,
+      )
+        .then(response => response.json())
+        .then(json => {
+          Log({logLable: 'json', logValue: json});
+        })
+        .catch(err => {
+          // console.log('ERROR GETTING DATA FROM FACEBOOK', err);
+        });
+    })
+    .then(currentUser => {
+      // console.log('Facebook login user:', currentUser);
+    })
+    .catch(error => {
+      // console.log('Facebook login fail:', error);
+    });
+};
+
