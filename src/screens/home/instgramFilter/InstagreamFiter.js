@@ -790,7 +790,19 @@
 //           <View
 import {View, Text} from 'react-native';
 import React from 'react';
+// import RNFS from 'react-native-fs';
 
+const getImageBase64 = async (imagePath: any) => {
+  try {
+    // Read the image file
+    const imageFile = await RNFS.readFile(imagePath, 'base64');
+    // Return the Base64 encoded image
+    return imageFile;
+  } catch (error) {
+    console.error('Error converting image to Base64:', error);
+    return null;
+  }
+};
 export default function InstagreamFiter() {
   return (
     <View>
