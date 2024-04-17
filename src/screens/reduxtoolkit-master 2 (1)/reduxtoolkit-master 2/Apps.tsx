@@ -11,6 +11,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 // import { PersistGate } from 'redux-persist/integration/react';
 // import Store from './src/redux/Store';
 const Stack = createNativeStackNavigator();
+
 const App = () => {
   return (
     <Provider store={store}>
