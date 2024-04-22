@@ -13,7 +13,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
-  return (
+  return (  
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <NavigationContainer>
