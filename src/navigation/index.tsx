@@ -1,11 +1,12 @@
-import 'react-native-gesture-handler';
-import {NavigationContainer} from '@react-navigation/native';
-import AuthStack from './stacks/authStack';
+import RootStack from '@navigation/stacks/RootStack';
+import { NavigationContainer } from '@react-navigation/native';
+import { FC } from 'react';
+import SplashScreen from 'react-native-splash-screen';
 
-const Route = () => {
+const Route: FC = () => {
   return (
-    <NavigationContainer>
-      <AuthStack />
+    <NavigationContainer independent={true} onReady={() => SplashScreen.hide()}>
+      <RootStack />
     </NavigationContainer>
   );
 };

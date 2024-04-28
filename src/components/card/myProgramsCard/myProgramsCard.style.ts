@@ -1,0 +1,137 @@
+import color from '@theme/color';
+import font from '@theme/font';
+import {StyleSheet} from 'react-native';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    borderRadius: 8,
+    height: 162,
+  },
+  imageBg: {
+    flex: 1,
+    height: 162,
+    borderRadius: 8,
+    overflow: 'hidden',
+  },
+  shadowBg: {
+    flex: 1,
+    borderRadius: 8,
+    overflow: 'hidden',
+    height: 162,
+  },
+  tagsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+  },
+  tag: {
+    height: 22,
+    backgroundColor: color.primary,
+    justifyContent: 'center',
+  },
+  tagLinearColor: {
+    height: 22,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    flexDirection: 'row',
+  },
+  tagText: {
+    fontFamily: font.openSansRegular,
+    fontSize: 12,
+    paddingHorizontal: 8,
+    color: color.secondaryBG,
+    fontWeight: '500',
+    lineHeight: 14,
+  },
+  tagPackageText: {
+    fontFamily: font.openSansRegular,
+    fontSize: 12,
+    paddingHorizontal: 8,
+    color: color.primaryText,
+    lineHeight: 14,
+  },
+  statusContainer: {
+    borderRadius: 20,
+    height: 25,
+    justifyContent: 'center',
+    marginHorizontal: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  statusDot: {
+    borderWidth: 5,
+    borderRadius: 10,
+    height: 5,
+    width: 5,
+    marginLeft: 5,
+  },
+  statusText: {
+    fontFamily: font.openSansRegular,
+    fontSize: 12,
+    paddingHorizontal: 8,
+    fontWeight: '500',
+    lineHeight: 15,
+  },
+  title: {
+    fontFamily: font.openSansRegular,
+    fontWeight: '600',
+    fontSize: 18,
+    marginHorizontal: 8,
+    marginTop: 12,
+    color: color.secondaryBG,
+    lineHeight: 21,
+    marginLeft: 14,
+  },
+  infoContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 18,
+  },
+  infoRow: {
+    flexDirection: 'row',
+    marginLeft: 14,
+    marginBottom: 5,
+    alignItems: 'center',
+  },
+  infoText: {
+    fontSize: 12,
+    fontWeight: '500',
+    fontFamily: font.openSansRegular,
+    marginRight: 13,
+    color: color.secondaryBG,
+    marginLeft: 3,
+  },
+  priceContainer: {
+    borderRadius: 17,
+    height: 36,
+    backgroundColor: color.priceTagBG,
+    justifyContent: 'center',
+    marginHorizontal: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  priceIcon: {
+    borderWidth: 5,
+    borderRadius: 20,
+    backgroundColor: color.primaryText,
+    height: 23,
+    width: 23,
+    marginLeft: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  priceText: {
+    fontFamily: font.openSansMedium,
+    fontSize: 10,
+    paddingRight: 15,
+    paddingLeft: 4,
+    color: color.primaryText,
+    fontWeight: '600',
+    lineHeight: 14,
+  },
+  textView: {
+    marginRight: 5,
+  },
+});
+export default styles;

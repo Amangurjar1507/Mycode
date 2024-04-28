@@ -1,0 +1,166 @@
+import {styles} from './traineeManagement.style';
+
+const allProgramsData = [
+  {
+    id: 1,
+    title: 'Total Subscribers',
+    amount: '40,000',
+    description: 'Increase of active users',
+    progress: '5',
+  },
+  {
+    id: 2,
+    title: 'New Subscribers',
+    amount: '3,500',
+    description: 'Increase of active users',
+    progress: '5',
+  },
+  {
+    id: 3,
+    title: 'Active Subscribers',
+    amount: '35,000',
+    description: 'Increase of active users',
+    progress: '5',
+  },
+];
+
+const dropdownList = [
+  {
+    id: 1,
+    title: 'Last Week',
+  },
+  {
+    id: 2,
+    title: 'Last 24h',
+  },
+  {
+    id: 3,
+    title: 'Last Month',
+  },
+  {
+    id: 4,
+    title: 'Last Year',
+  },
+  {
+    id: 5,
+    title: 'Max',
+  },
+];
+
+const chartList = [
+  {
+    value: 160,
+    date: '1 Apr 2022',
+    label: '23/02/23',
+    labelTextStyle: styles.chartLable,
+  },
+  {value: 180, date: '2 Apr 2022'},
+  {value: 190, date: '3 Apr 2022'},
+  {value: 180, date: '4 Apr 2022'},
+  {value: 140, date: '5 Apr 2022'},
+  {value: 145, date: '6 Apr 2022'},
+  {value: 160, date: '7 Apr 2022'},
+  {value: 200, date: '8 Apr 2022'},
+  {value: 220, date: '9 Apr 2022'},
+  {
+    value: 240,
+    date: '10 Apr 2022',
+    label: '23/02/23',
+    labelTextStyle: styles.chartLable,
+  },
+  {value: 280, date: '11 Apr 2022'},
+  {value: 260, date: '12 Apr 2022'},
+  {value: 340, date: '13 Apr 2022'},
+  {value: 385, date: '14 Apr 2022'},
+  {value: 280, date: '15 Apr 2022'},
+  {value: 390, date: '16 Apr 2022'},
+  {value: 370, date: '17 Apr 2022'},
+  {value: 285, date: '18 Apr 2022'},
+  {value: 295, date: '19 Apr 2022'},
+  {
+    value: 300,
+    date: '20 Apr 2022',
+    label: '23/02/23',
+    labelTextStyle: styles.chartLable,
+  },
+  {value: 280, date: '21 Apr 2022'},
+  {value: 295, date: '22 Apr 2022'},
+  {value: 260, date: '23 Apr 2022'},
+  {value: 255, date: '24 Apr 2022'},
+  {value: 190, date: '25 Apr 2022'},
+  {value: 220, date: '26 Apr 2022'},
+  {value: 205, date: '27 Apr 2022'},
+  {value: 230, date: '28 Apr 2022'},
+  {value: 210, date: '29 Apr 2022'},
+  {
+    value: 200,
+    date: '30 Apr 2022',
+    label: '23/02/23',
+    labelTextStyle: styles.chartLable,
+  },
+  {value: 240, date: '1 May 2022'},
+  {value: 250, date: '2 May 2022'},
+  {value: 280, date: '3 May 2022'},
+  {value: 250, date: '4 May 2022'},
+  {value: 210, date: '5 May 2022'},
+];
+
+const subscriptions = [
+  {
+    id: 1,
+    title: 'John Warner',
+    descriptions: 'Cross-fit 30 min bodyweight only full tone exercise',
+    dateOfSub: '23/3/23',
+    leftDuration: '2 months',
+    validUpto: '23/5/23',
+    country: 'India',
+    pricePaid: '$3,000',
+    device: 'Android, IOS',
+  },
+  {
+    id: 2,
+    title: 'John',
+    descriptions: 'Cross-fit 30 min bodyweight only full tone exercise',
+    dateOfSub: '23/3/23',
+    leftDuration: '2 months',
+    validUpto: '23/5/23',
+    country: 'India',
+    pricePaid: '$3,000',
+    device: 'Android, IOS',
+  },
+  {
+    id: 3,
+    title: 'User',
+    descriptions: 'Cross-fit 30 min bodyweight only full tone exercise',
+    dateOfSub: '23/3/23',
+    leftDuration: '2 months',
+    validUpto: '23/5/23',
+    country: 'India',
+    pricePaid: '$3,000',
+    device: 'Android, IOS',
+  },
+  {
+    id: 4,
+    title: 'Jon',
+    descriptions: 'Cross-fit 30 min bodyweight only full tone exercise',
+    dateOfSub: '23/3/23',
+    leftDuration: '2 months',
+    validUpto: '23/5/23',
+    country: 'India',
+    pricePaid: '$3,000',
+    device: 'Android, IOS',
+  },
+  {
+    id: 5,
+    title: 'Jon',
+    descriptions: 'Cross-fit 30 min bodyweight only full tone exercise',
+    dateOfSub: '23/3/23',
+    leftDuration: '2 months',
+    validUpto: '23/5/23',
+    country: 'India',
+    pricePaid: '$3,000',
+    device: 'Android, IOS',
+  },
+];
+
+export {allProgramsData, dropdownList, chartList, subscriptions};

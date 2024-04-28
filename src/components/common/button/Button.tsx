@@ -1,30 +1,133 @@
-import {ActivityIndicator, Text, TouchableOpacity} from 'react-native';
-import React, {memo} from 'react';
-import styles from './button.style';
-import {PropsTypes} from './button.interface';
-import color from '../../../theme/color';
+import color from '@theme/color';
+import React, {FC, SVGProps, memo} from 'react';
+import {
+  ActivityIndicator,
+  ActivityIndicatorProps,
+  ColorValue,
+  StyleProp,
+  Text,
+  TextStyle,
+  TouchableOpacity,
+  TouchableOpacityProps,
+  View,
+  ViewStyle,
+} from 'react-native';
+import style from './button.style';
 
-const Button: React.FC<PropsTypes> = props => {
+type TSVGElementProps = SVGProps<SVGSVGElement>;
+interface ButtonProps {
+  label: string;
+  containerStyle?: StyleProp<ViewStyle> | undefined;
+  isLoading?: boolean;
+  activityProps?: ActivityIndicatorProps;
+  nameTextStyle?: StyleProp<TextStyle> | undefined;
+  onPress?: () => void;
+  buttonProps?: TouchableOpacityProps;
+  backgroundColor?: ColorValue | undefined;
+  disabled?: boolean;
+  type?: 'Solid' | 'Outline';
+  marginHorizontal?: number;
+  inActive?: boolean;
+  leftIcon?: any;
+  rightIcon?: any;
+}
+
+const Button: FC<ButtonProps> = ({
+  label,
+  activityProps,
+  buttonProps,
+  containerStyle,
+  isLoading,
+  nameTextStyle,
+  onPress,
+  disabled,
+  type,
+  marginHorizontal,
+  inActive,
+  ...props
+}) => {
   return (
-    <TouchableOpacity
-      style={[styles.touchableStyle, props.buttonContainer]}
-      activeOpacity={0.7}
-      disabled={props.disabled}
-      onPress={props.onPress}>
-      {props.isLoading ? (
-        <ActivityIndicator
-          size="small"
-          color={color.black}
-          style={{marginRight: 10}}
-          {...props.activityProps}
-        />
+    <View style={[style.marginContainer, {marginHorizontal: marginHorizontal}]}>
+      {type === 'Outline' ? (
+        <TouchableOpacity
+          style={[style.outlineContainer, containerStyle]}
+          activeOpacity={0.7}
+          onPress={onPress}
+          disabled={disabled}
+          {...buttonProps}>
+          {isLoading && (
+            <ActivityIndicator
+              size="small"
+              color={color.secondaryBG}
+              style={style.indicatorStyle}
+              {...activityProps}
+            />
+          )}
+          <View style={style.iconView}>
+            {props.leftIcon && (
+              <View style={style.leftIcon}>
+                <props.leftIcon />
+              </View>
+            )}
+            <Text
+              style={[style.nameStyle, nameTextStyle]}
+              textBreakStrategy="highQuality">
+              {label}
+            </Text>
+            {props.rightIcon && (
+              <View style={style.rightIcon}>
+                <props.rightIcon />
+              </View>
+            )}
+          </View>
+        </TouchableOpacity>
       ) : (
-        <Text style={[styles.buttonText, props.buttonTextStyle]}>
-          {props.text}
-        </Text>
+        <TouchableOpacity
+          style={[
+            inActive ? style.inActiveContainer : style.container,
+            containerStyle,
+          ]}
+          activeOpacity={0.8}
+          onPress={onPress}
+          disabled={disabled || inActive}
+          {...buttonProps}>
+          {isLoading && (
+            <ActivityIndicator
+              size="small"
+              color={color.secondaryBG}
+              style={style.indicatorStyle}
+              {...activityProps}
+            />
+          )}
+          <View style={style.iconView}>
+            {props.leftIcon && (
+              <View style={style.leftIcon}>
+                <props.leftIcon />
+              </View>
+            )}
+            <Text
+              style={[
+                inActive ? style.inActiveNameStyle : style.nameStyle,
+                nameTextStyle,
+              ]}>
+              {label}
+            </Text>
+            {props.rightIcon && (
+              <View style={style.rightIcon}>
+                <props.rightIcon />
+              </View>
+            )}
+          </View>
+        </TouchableOpacity>
       )}
-    </TouchableOpacity>
+    </View>
   );
 };
 
 export default memo(Button);
+Button.defaultProps = {
+  isLoading: false,
+  disabled: false,
+  inActive: false,
+  type: 'Solid',
+};

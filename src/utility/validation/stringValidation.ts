@@ -13,7 +13,9 @@ const StringValidation = (string: string) => {
   return validate;
 };
 const checkEmail = (value: string) => {
-  const condition = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+  const condition = new RegExp(
+    /^[_a-za-zA-Z0-9-]+(\.[_a-za-zA-Z0-9-]+)*@[a-za-zA-Z0-9-]+(\.[_a-za-zA-Z0-9-]{3})*(?:\.[_a-za-zA-Z]{2,3})$/,
+  );
   return condition.test(value);
 };
 const checkPassword = (value: string) => {
@@ -29,27 +31,27 @@ const checkNumeric = (value: string) => {
   return condition.test(value);
 };
 const checkPswd = (value: string) => {
-  // const condition = new RegExp(/^.{8}$/);
   const condition = new RegExp(
-    /^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-/+_]).{8,}$/,
+    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-/+_]).{8,}$/,
   );
   return condition.test(value);
 };
 const checkName = (value: string) => {
-  const condition = new RegExp(/^[A-Za-z ]+$/);
+  const condition = new RegExp(/^[A-Za-z0-9 ]+$/);
   return condition.test(value);
 };
 const checkString = (value: string) => {
-  const condition = new RegExp(/^(?!.*\.com)(?=.*[@]).*$/);
-
+  const condition = new RegExp(/^[a-zA-Z ]+$/);
   return condition.test(value);
 };
-
+// const checkMobileNumber = (value: string) => {
+//   const condition = new RegExp(/^(?!(\d)\1{4})(?!.*(\d)\2{4})[6789]\d{9}$/);
+//   return condition.test(value);
+// };
 const checkMobileNumber = (value: string) => {
   const condition = new RegExp(/^\d{10}$/);
   return condition.test(value);
 };
-
 const isValidUrl = (url: string): boolean => {
   const urlRegex =
     /^((http(s?)?):\/\/)?([wW]{3}\.)?[a-zA-Z0-9\-.]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$/g;
@@ -57,10 +59,6 @@ const isValidUrl = (url: string): boolean => {
 
   return result !== null;
 };
-export const mobileNumberPattern = /^[0-9]{10}$/;
-export const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-export const otpPattern = /^[0-9]{4}$/;
-
 export {
   StringValidation,
   checkEmail,

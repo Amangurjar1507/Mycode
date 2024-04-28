@@ -1,0 +1,143 @@
+import color from '@theme/color';
+import font from '@theme/font';
+import {Dimensions, StyleSheet} from 'react-native';
+const width = Dimensions.get('window').width;
+
+const styles = StyleSheet.create({
+  container: {
+    width: width,
+    marginTop: 12,
+    height: 397,
+    flexDirection: 'row',
+    paddingHorizontal: 20,
+  },
+  innerContainer: {
+    height: 397,
+    position: 'absolute',
+    right: 0,
+  },
+  tag: {
+    marginTop: 18,
+    position: 'absolute',
+    marginLeft: 20,
+  },
+  tagText: {
+    fontFamily: font.openSansMedium,
+    fontSize: 12,
+    paddingHorizontal: 8,
+    color: color.secondaryBG,
+    fontWeight: '500',
+    lineHeight: 14,
+  },
+  crossFitText: {
+    fontFamily: font.workSansBold,
+    fontSize: 24,
+    color: color.secondaryBG,
+    fontWeight: '400',
+    lineHeight: 28.15,
+  },
+  backText: {
+    fontFamily: font.openSansBold,
+    fontSize: 15,
+    color: color.secondaryBG,
+    fontWeight: '600',
+    lineHeight: 20.43,
+  },
+  statusContainer: {
+    position: 'absolute',
+    right: 20,
+    marginTop: 20,
+  },
+  statusDot: {
+    borderWidth: 5,
+    borderRadius: 10,
+    height: 5,
+    width: 5,
+    marginLeft: 5,
+  },
+  title: {
+    fontFamily: font.openSansMedium,
+    fontWeight: '600',
+    fontSize: 18,
+    marginHorizontal: 8,
+    marginTop: 12,
+    color: color.secondaryBG,
+    lineHeight: 21,
+    marginLeft: 14,
+  },
+  infoContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 18,
+  },
+  infoRow: {
+    flexDirection: 'row',
+    marginLeft: 14,
+    marginBottom: 5,
+    alignItems: 'center',
+  },
+  infoText: {
+    fontSize: 14,
+    fontWeight: '400',
+    fontFamily: font.openSansMedium,
+    color: color.secondaryBG,
+    lineHeight: 19.07,
+  },
+  priceContainer: {
+    borderRadius: 17,
+    height: 36,
+    backgroundColor: color.secondaryBG,
+    justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 11,
+    width: '38%',
+  },
+  priceIcon: {
+    borderWidth: 5,
+    borderRadius: 20,
+    backgroundColor: color.primaryText,
+    height: 23,
+    width: 23,
+    marginLeft: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  priceText: {
+    fontFamily: font.openSansMedium,
+    fontSize: 10,
+    paddingRight: 15,
+    paddingLeft: 4,
+    color: color.primaryText,
+    fontWeight: '600',
+    lineHeight: 14,
+  },
+  textView: {
+    fontSize: 12,
+    fontWeight: '400',
+    fontFamily: font.openSansMedium,
+    color: color.secondaryBG,
+    lineHeight: 14.52,
+  },
+  postisionStyle: {
+    position: 'absolute',
+    bottom: 21,
+    left: 20,
+  },
+  star: {
+    width: 15,
+    height: 15,
+    marginTop: 5,
+    marginHorizontal: 1.3,
+  },
+  textView2: {
+    fontSize: 12,
+    fontWeight: '400',
+    fontFamily: font.openSansMedium,
+    color: color.secondaryBG,
+    lineHeight: 14.52,
+    textAlign: 'right',
+    marginRight: 4,
+  },
+});
+export default styles;

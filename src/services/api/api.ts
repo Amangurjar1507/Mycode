@@ -1,6 +1,7 @@
 import axios from 'axios';
-import constant from '../config/constant';
+import Snackbar from 'react-native-snackbar';
 
+import constant from '../config/constant';
 const CancelToken = axios.CancelToken;
 const source = CancelToken.source();
 const axiosInstance = axios.create({
@@ -28,17 +29,34 @@ axiosInstance.interceptors.request.use(
 axiosInstance.interceptors.response.use(
   async response => response,
   async function (error) {
-    if (error?.response?.status === 401 || error?.response?.status === 0) {
+    if (error?.response?.status === 401) {
       // navigateAndSimpleReset(screenName.session, 0);
-      source.cancel('Operation becouse of status code 401');
+      // navigateAndSimpleReset(screenName.sessionOut, 0); // source.cancel('Operation becouse of status code 401');
       // source.cancel('Operation becouse of status code 401');
       //do what you want to do in here
     } else if (error?.response?.status === 422) {
+      Snackbar.show({
+        text:
+          error?.response?.data?.error?.[
+          Object.keys(error?.response?.data?.error)[0]
+          ][0] ?? 'Somthing went wrong! Please try again.',
+      });
       // Toast.show(
+      //   error?.response?.data?.error?.[
+      //     Object.keys(error?.response?.data?.error)[0]
+      //   ][0] ?? 'Somthing went wrong! Please try again.',
+      //   toastUi,
+      // );
+    } else if (error?.response?.status === 451) {
+      Snackbar.show({
+        text:
+          error?.response?.data?.error?.[
+          Object.keys(error?.response?.data?.error)[0]
+          ][0] ?? 'Somthing went wrong! Please try again.',
+      });
     }
-
     return Promise.reject(error);
   },
 );
 
-export {axiosInstance};
+export { axiosInstance };

@@ -1,102 +1,74 @@
+import color from '@theme/color';
+import font from '@theme/font';
 import {StyleSheet} from 'react-native';
-import color from '../../../theme/color';
-import font from '../../../theme/font';
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: color.textWhite,
+    backgroundColor: color.primaryBG,
   },
-  scrollView: {
-    paddingBottom: 200,
-    flexGrow: 1,
+  headingText: {
+    marginTop: 20,
+    fontFamily: font.workSansSemiBold,
+    fontWeight: '600',
+    fontSize: 28,
+    lineHeight: 32.84,
+    color: color.primaryText,
   },
-  keyboardContainer: {
+  formContainer: {
     flex: 1,
-  },
-  logoImage: {
-    height: 76,
-    width: '100%',
-    resizeMode: 'contain',
-    marginTop: 89,
-    alignSelf: 'center',
-  },
-  backgroundImage: {
-    height: 300,
-    width: '100%',
-  },
-  signinText: {
-    fontSize: 16,
-    fontFamily: font.MontserratBlack,
-    color: color.black,
-    marginHorizontal: 32,
-    textAlign: 'center',
-    marginTop: 45,
+    marginTop: 20,
   },
   inputContainer: {
-    marginHorizontal: 32,
-    marginTop: 45,
+    marginBottom: 10,
   },
-  inputRowView: {
-    borderColor: 'red',
+  forgotPassButton: {
+    alignItems: 'flex-end',
   },
-  inputPasswordContainer: {
-    marginHorizontal: 32,
-  },
-  lostPasswordText: {
-    fontSize: 14,
-    lineHeight: 18,
-    textAlign: 'right',
-  },
-  buttonContainer: {
-    marginHorizontal: 32,
-    marginTop: 45,
-  },
-  buttonName: {
-    fontFamily: font.MontserratBlack,
-  },
-  signupAccount: {
-    fontSize: 14,
-    lineHeight: 18,
-    color: 'blcak',
-  },
-  signupText: {
-    fontSize: 14,
-    lineHeight: 18,
-    color: color.black,
-    fontWeight: '800',
-  },
-  signupView: {
-    flexDirection: 'row',
-    marginTop: 50,
-    alignSelf: 'center',
-    alignItems: 'center',
-  },
-  conditionView: {
-    flexDirection: 'row',
-    marginTop: 28,
-
-    alignSelf: 'center',
-  },
-  conditionText: {
+  forgotPasswordLabel: {
     fontSize: 12,
-    lineHeight: 20,
-    marginTop: 28,
-    marginHorizontal: 32,
-    textAlign: 'center',
-    fontWeight: '900',
-  },
-  termsText: {
-    fontSize: 12,
-    lineHeight: 20,
-    color: color.black,
+    lineHeight: 16,
+    color: color.primaryText,
+    fontFamily: font.openSansRegular,
     fontWeight: '600',
   },
-  forgotPasswordView: {
-    marginRight: 49,
+  btnContainer: {
+    paddingHorizontal: 20,
+  },
+  btnStyle: {
+    marginTop: 30,
+    alignSelf: 'center',
+    width: 257,
+  },
+  privacyContainer: {
     marginTop: 10,
-    alignSelf: 'flex-end',
-    padding: 5,
+  },
+  dontHaveAccount: {
+    fontSize: 12,
+    lineHeight: 16,
+    color: color.secondaryText,
+    fontFamily: font.openSansRegular,
+    fontWeight: '400',
+    textAlign: 'center',
+    marginBottom: 30,
+  },
+  dontIfDont: {
+    marginTop: 16,
+    fontFamily: font.openSansRegular,
+    fontSize: 12,
+    fontWeight: '400',
+    lineHeight: 16.34,
+    color: color.secondaryText,
+    textAlign: 'center',
+    marginHorizontal: 15,
+    marginBottom: 38, //48 for other
+  },
+  signUpLabel: {
+    fontFamily: font.openSansRegular,
+    fontWeight: '700',
+    color: color.primaryText,
+    textDecorationLine: 'underline',
   },
 });
-export default style;
+
+export default styles;

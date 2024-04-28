@@ -1,19 +1,33 @@
-import {createStore, applyMiddleware} from 'redux';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import {persistReducer, persistStore} from 'redux-persist';
-import thunk from 'redux-thunk';
+import { configureStore } from '@reduxjs/toolkit';
+import {
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
+import storage from '@react-native-async-storage/async-storage';
 import rootReducer from './rootReducer';
 
 const persistConfig = {
   key: 'root',
-  storage: AsyncStorage,
+  version: 1,
+  storage,
 };
+
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-const store = createStore(persistedReducer, applyMiddleware(thunk));
+export const Store = configureStore({
+  reducer: persistedReducer,
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+});
 
-const persistor = persistStore(store);
-export type AppDispatch = typeof store.dispatch;
-export default () => {
-  return {store, persistor};
-};
+export type AppDispatch = typeof Store.dispatch;
+export type RootState = ReturnType<typeof Store.getState>;
