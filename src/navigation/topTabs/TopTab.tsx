@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import screenName from '../screenName';
 import CustomMyTopTab from './TopTabNav';
-import Login from '../../screens/auth/login/Login';
+import Login from '../../authScreen/login/Login';
 
 const Top = createMaterialTopTabNavigator();
 

@@ -31,7 +31,11 @@
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.2",
     "rn-vertical-slider": "^4.0.0",
-    "yarn": "^1.22.21"
+    "yarn": "^1.22.21",
+    "react-native-email-link":"react-native-email-link",
+ "swr":"swr",
+ "react-native-currency-input":"react-native-currency-input",
+ "@react-native-ml-kit/text-recognition":"@react-native-ml-kit/text-recognition"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

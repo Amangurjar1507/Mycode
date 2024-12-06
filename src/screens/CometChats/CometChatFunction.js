@@ -1,3 +1,10 @@
+
+import { openInbox } from 'react-native-email-link';
+<Button
+text={languageData?.data?.openEmailApp}
+buttonContainer={styles.buttonStyle}
+onPress={() => openInbox()}
+/>
 const fetchGroupMessages = (group) => {
     const limit = 30;
     const messagesRequest = new CometChat.MessagesRequestBuilder()

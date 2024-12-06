@@ -168,6 +168,26 @@
 //       }
 //     }
 //   };
+// useEffect(() => {
+//     setLoading(true);
+//     getMessages();
+//     const interval = setInterval(() => {
+//       getMessages();
+//     }, 5000);
+//     return () => clearInterval(interval);
+//   }, []);
+//   useEffect(() => {
+//     Keyboard.addListener('keyboardDidShow', () => {
+//       setIsKeyboardVisible(true); // or some other action
+//     });
+//     Keyboard.addListener('keyboardDidHide', () => {
+//       setIsKeyboardVisible(false); // or some other action
+//     });
+
+//     return () => {
+//       Keyboard.removeAllListeners('');
+//     };
+//   }, []);
 
 
 

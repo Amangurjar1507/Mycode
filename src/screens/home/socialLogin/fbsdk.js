@@ -106,7 +106,7 @@ export default class App extends Component {
         return AccessToken.getCurrentAccessToken();
       }
     })
-    .then((data: any) => {
+    .then((data) => {
       // const credential = firebase.auth.FacebookAuthProvider.credential(data.accessToken);
       fetch(
         'https://graph.facebook.com/v2.5/me?fields=email,name,picture&access_token=' +

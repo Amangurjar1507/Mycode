@@ -18,8 +18,8 @@ const Adduser = () => {
            dispatch(AddMode({id:User?.length +1,first:first,last:last,mobile:mobile,address:address}));
         navigation.goBack();
     }
-
-    function UpdateFun() {
+    
+        function UpdateFun() {
         dispatch(UpdateMode({id:params?.id,first:first,last:last,mobile:mobile,address:address}));
         navigation.goBack();
         
