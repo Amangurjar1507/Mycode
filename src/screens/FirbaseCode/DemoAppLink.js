@@ -241,4 +241,80 @@
 
 
 
+// Raghav 
 
+
+// var isListenerAttached = false;
+//   var subscribe: any;
+//   React.useEffect(() => {
+//     if (!isListenerAttached) {
+//       subscribe = Linking.addEventListener('url', HandleUrl);
+//       isListenerAttached = true;
+//     }
+//     return () => subscribe.remove();
+//   }, []);
+
+//   React.useEffect(() => {
+//     Linking.getInitialURL().then(url => {
+//       if (url) {
+//         var urlRegex = /[?&]([^=#]+)=([^&#]*)/g,
+//           params: any = {},
+//           match;
+//         while ((match = urlRegex?.exec(url))) {
+//           params[match[1]] = match[2];
+//         }
+//         var key,
+//           keys = Object.keys(params);
+//         var n = keys.length;
+//         var newobj: any = {};
+//         while (n--) {
+//           key = keys[n];
+//           newobj[key.toLowerCase()] = params[key];
+//         }
+//         console.log('newobject', newobj);
+//         navigate(screenName.login, {
+//           referral: newobj.referral,
+//           Screen: 'SignUp',
+//         });
+//         // if (userLogin.isLogin) {
+//         //   navigate(screenName.login);
+//         // } else {
+//         //   navigate(screenName.joinWhiteList, {
+//         //     referralCode: newobj['left-referral']
+//         //       : newobj['right-referral'],
+//         //   });
+//         // }
+//       }
+//     });
+//   }, []);
+
+//   const HandleUrl = (event: any) => {
+//     if (event?.url) {
+//       var urlRegex = /[?&]([^=#]+)=([^&#]*)/g,
+//         params: any = {},
+//         match;
+
+//       while ((match = urlRegex.exec(event?.url))) {
+//         params[match[1]] = match[2];
+//       }
+//       var key,
+//         keys = Object.keys(params);
+//       var n = keys.length;
+//       var newobj: any = {};
+//       while (n--) {
+//         key = keys[n];
+//         newobj[key.toLowerCase()] = params[key];
+//       }
+//       console.log('newobj', newobj);
+//       navigate(screenName.login, {referral: newobj.referral, Screen: 'SignUp'});
+//       // if (userLogin.isLogin) {
+//       //   navigate(screenName.dashboard);
+//       // } else {
+//       //   navigate(screenName.joinWhiteList, {
+//       //     referralCode: newobj['left-referral']
+//       //       : newobj['right-referral'],
+//       //   });
+//       // }
+//     }
+//   };
+//   //
